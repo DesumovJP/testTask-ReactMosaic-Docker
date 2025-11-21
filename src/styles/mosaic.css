@@ -1,0 +1,60 @@
+.mosaic-blueprint-theme,
+.mosaic-dark-theme {
+  background: #1a1a1a;
+}
+
+.mosaic-light-theme {
+  background: #f5f5f5;
+}
+
+.mosaic-blueprint-theme .mosaic-window-toolbar,
+.mosaic-dark-theme .mosaic-window-toolbar,
+.mosaic-light-theme .mosaic-window-toolbar {
+  display: none !important;
+}
+
+.mosaic-blueprint-theme .mosaic-window,
+.mosaic-dark-theme .mosaic-window,
+.mosaic-light-theme .mosaic-window {
+  background: transparent;
+  border: none;
+}
+
+.mosaic-blueprint-theme .mosaic-window-body,
+.mosaic-dark-theme .mosaic-window-body,
+.mosaic-light-theme .mosaic-window-body {
+  padding: 0;
+  height: 100%;
+}
+
+.mosaic-blueprint-theme .mosaic-split,
+.mosaic-dark-theme .mosaic-split {
+  background: #293742;
+  border: none;
+}
+
+.mosaic-blueprint-theme .mosaic-split:hover,
+.mosaic-dark-theme .mosaic-split:hover {
+  background: #394b59;
+}
+
+.mosaic-light-theme .mosaic-split {
+  background: #d1d5db;
+  border: none;
+}
+
+.mosaic-light-theme .mosaic-split:hover {
+  background: #9ca3af;
+}
+
+.mosaic-blueprint-theme .mosaic-split.column,
+.mosaic-dark-theme .mosaic-split.column,
+.mosaic-light-theme .mosaic-split.column {
+  width: 2px;
+}
+
+.mosaic-blueprint-theme .mosaic-split.row,
+.mosaic-dark-theme .mosaic-split.row,
+.mosaic-light-theme .mosaic-split.row {
+  height: 2px;
+}
