@@ -5,6 +5,7 @@ import '../styles/mosaic.css';
 import { CompanyInfoWidget } from './widgets/CompanyInfoWidget';
 import { getCompanies } from '../lib/api';
 import type { Company } from '../lib/types';
+import { Dropdown } from './ui/Dropdown';
 
 type ViewId = '1' | '2' | '3';
 type Theme = 'Blueprint' | 'Dark' | 'Light';
@@ -119,40 +120,14 @@ export function Dashboard() {
           {/* Second row: Theme left, buttons right */}
           <div className="flex items-center justify-between w-full gap-2">
             <div className="flex items-center gap-1.5 flex-shrink-0">
-              <span className={`${isLightTheme ? 'text-gray-600' : 'text-white'} whitespace-nowrap text-xs`}>
-                Theme:
-              </span>
-              <div className="relative">
-                <select
-                  value={theme}
-                  onChange={(e) => setTheme(e.target.value as Theme)}
-                  className={`px-2 py-1 border rounded text-xs focus:outline-none transition-colors appearance-none pr-6 w-auto min-w-[100px] ${
-                    isLightTheme
-                      ? 'bg-white border-gray-300 text-gray-900'
-                      : 'bg-transparent border-white/30 text-white hover:border-white/50'
-                  }`}
-                >
-                  <option value="Blueprint">Blueprint</option>
-                  <option value="Dark">Dark</option>
-                  <option value="Light">Light</option>
-                </select>
-                <div className="absolute inset-y-0 right-0 flex flex-col items-center justify-center pr-1.5 pointer-events-none">
-                  <svg
-                    className={`w-[5px] h-[5px] ${isLightTheme ? 'text-gray-400' : 'text-gray-500'}`}
-                    fill="currentColor"
-                    viewBox="0 0 8 8"
-                  >
-                    <path d="M4 0L0 4h8L4 0z" />
-                  </svg>
-                  <svg
-                    className={`w-[5px] h-[5px] -mt-0.5 ${isLightTheme ? 'text-gray-400' : 'text-gray-500'}`}
-                    fill="currentColor"
-                    viewBox="0 0 8 8"
-                  >
-                    <path d="M4 8L0 4h8L4 8z" />
-                  </svg>
-                </div>
-              </div>
+              <Dropdown
+                options={['Blueprint', 'Dark', 'Light']}
+                value={theme}
+                onChange={(value) => setTheme(value as Theme)}
+                label="Theme:"
+                theme={theme}
+                className="text-xs"
+              />
             </div>
             <div className="flex items-center gap-1.5 flex-wrap">
               <button
@@ -202,40 +177,14 @@ export function Dashboard() {
           <div className="flex-1" />
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className={`${isLightTheme ? 'text-gray-600' : 'text-white'} whitespace-nowrap text-sm`}>
-                Theme:
-              </span>
-              <div className="relative">
-                <select
-                  value={theme}
-                  onChange={(e) => setTheme(e.target.value as Theme)}
-                  className={`px-2.5 py-1 border rounded text-xs focus:outline-none transition-colors appearance-none pr-6 w-auto min-w-[120px] ${
-                    isLightTheme
-                      ? 'bg-white border-gray-300 text-gray-900'
-                      : 'bg-transparent border-white/30 text-white hover:border-white/50'
-                  }`}
-                >
-                  <option value="Blueprint">Blueprint</option>
-                  <option value="Dark">Dark</option>
-                  <option value="Light">Light</option>
-                </select>
-                <div className="absolute inset-y-0 right-0 flex flex-col items-center justify-center pr-1.5 pointer-events-none">
-                  <svg
-                    className={`w-[5px] h-[5px] ${isLightTheme ? 'text-gray-400' : 'text-gray-500'}`}
-                    fill="currentColor"
-                    viewBox="0 0 8 8"
-                  >
-                    <path d="M4 0L0 4h8L4 0z" />
-                  </svg>
-                  <svg
-                    className={`w-[5px] h-[5px] -mt-0.5 ${isLightTheme ? 'text-gray-400' : 'text-gray-500'}`}
-                    fill="currentColor"
-                    viewBox="0 0 8 8"
-                  >
-                    <path d="M4 8L0 4h8L4 8z" />
-                  </svg>
-                </div>
-              </div>
+              <Dropdown
+                options={['Blueprint', 'Dark', 'Light']}
+                value={theme}
+                onChange={(value) => setTheme(value as Theme)}
+                label="Theme:"
+                theme={theme}
+                className="text-xs"
+              />
             </div>
             <div
               className={`h-4 w-px ${
