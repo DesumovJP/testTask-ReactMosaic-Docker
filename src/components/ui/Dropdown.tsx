@@ -101,9 +101,9 @@ export function Dropdown({
       {label && (
         <label
           className={
-            isLightTheme || isBlueprint
+            isLightTheme
               ? 'text-sm text-gray-600'
-              : 'text-sm text-neutral-300'
+              : 'text-sm text-white'
           }
         >
           {label}

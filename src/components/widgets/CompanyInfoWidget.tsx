@@ -30,16 +30,27 @@ export function CompanyInfoWidget({
 
     setLoading(true);
     setError(null);
+    setCompany(null);
+
+    let cancelled = false;
 
     getCompany(ticker)
       .then((data) => {
-        setCompany(data);
-        setLoading(false);
+        if (!cancelled) {
+          setCompany(data);
+          setLoading(false);
+        }
       })
       .catch((err) => {
-        setError(err instanceof Error ? err.message : 'Failed to load company data');
-        setLoading(false);
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Failed to load company data');
+          setLoading(false);
+        }
       });
+
+    return () => {
+      cancelled = true;
+    };
   }, [ticker]);
 
   const isLightTheme = theme === 'Light';
